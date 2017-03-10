@@ -1,1 +1,1 @@
-# lds-quotes
+# LDS Quotes
