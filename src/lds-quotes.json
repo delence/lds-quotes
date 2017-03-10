@@ -1,5 +1,22 @@
 [
-    "Del",
-    "Joe",
-    "Tim"
+    {
+        "quote":"Never assume that you can make it alone. You need the help of the Lord. Never hesitate to get on your knees in some private place and speak with Him.", 
+        "author":"Gordon B. Hinckley", 
+        "source": "Stay on the High Road, Ensign, May 2004, 114"
+    },
+    {
+        "quote":"Men will be held accountable for the things which they have and not for the things they have not. … All the light and intelligence communicated to them from their beneficent creator, whether it is much or little, by the same they in justice will be judged, and … they are required to yield obedience and improve upon that and that only which is given, for man is not to live by bread alone but by every word that proceeds out of the mouth of God.", 
+        "author":"Joseph Smith", 
+        "source": "Teachings of Presidents of the Church: Joseph Smith (2007), 405"
+    },
+    {
+        "quote":"Here then is a great truth. In the pain, the agony, and the heroic endeavors of life, we pass through a refiner's fire, and the insignificant and the unimportant in our lives can melt away like dross and make our faith bright, intact, and strong.", 
+        "author":"James E. Faust", 
+        "source": "The Refiner's Fire, Ensign, May 1979, 53"
+    },
+    {
+        "quote":"It is a duty which every Saint ought to render to his brethren freely—to always love them, and ever succor them.", 
+        "author":"Joseph Smith", 
+        "source": "History of the Church, 2:229."
+    }
 ]
