@@ -1,0 +1,22 @@
+{
+  "name": "lds-quotes",
+  "version": "1.0.0",
+  "description": "Get random LDS quotes.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delence/lds-quotes.git"
+  },
+  "author": "Del Ence <delence@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/delence/lds-quotes/issues"
+  },
+  "homepage": "https://github.com/delence/lds-quotes#readme",
+  "dependencies": {
+    "unique-random-array": "1.0.0"
+  }
+}
