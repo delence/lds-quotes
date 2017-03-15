@@ -4,9 +4,10 @@
   "description": "Get random LDS quotes.",
   "main": "src/app.js",
   "scripts": {
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "commit": "git-cz",
     "test": "mocha src/app.test.js -w",
-    "test-single": "mocha src/app.test.js",
+    "test-single": "istanbul cover -x *.test.js _mocha -- -R spec src/app.test.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "ghooks": "2.0.0",
+    "istanbul": "0.4.5",
     "mocha": "3.2.0",
     "semantic-release": "^6.3.2"
   },
@@ -35,8 +37,8 @@
     "path": "node_modules/cz-conventional-changelog"
   },
   "config": {
-    "ghooks":  {
-      "pre-commit": "npm run test-single"
+    "ghooks": {
+      "pre-commit": "npm run test-single && npm run check-coverage"
     }
   }
 }
