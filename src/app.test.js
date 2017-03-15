@@ -24,6 +24,13 @@ describe('Lds-quotes', function() {
             var randomQuote = quotes.random();
             expect(quotes.all).to.include(randomQuote)
         })
+        it('should return a random number of items if passed a number', function() {
+            var randomQuotes = quotes.random(2);
+            expect(randomQuotes).to.have.length(2);
+            randomQuotes.forEach(function(quote) {
+                expect(quotes.all).to.include(quote);
+            })
+        })
     })
 
 });
