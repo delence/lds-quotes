@@ -2,14 +2,23 @@
   "name": "lds-quotes",
   "version": "0.0.0-development",
   "description": "Get random LDS quotes.",
-  "main": "src/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "prebuild": "rimraf dist",
+    "build": "babel --copy-files --out-dir dist --ignore *.test.js src",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "cover": "nyc npm t",
     "commit": "git-cz",
-    "test": "mocha src/app.test.js -w",
-    "test-single": "istanbul cover -x *.test.js _mocha -- -R spec src/app.test.js",
+    "watch-test": "npm t -- -w",
+    "test": "mocha src/app.test.js --compilers js:babel-register",
+    "test-single": "nyc cover -x *.test.js _mocha -- -R spec src/app.test.js --compilers js:babel-register",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/delence/lds-quotes.git"
@@ -24,6 +33,10 @@
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-preset-es2015": "6.24.0",
+    "babel-preset-stage-2": "6.22.0",
+    "babel-register": "6.24.0",
     "chai": "3.5.0",
     "chi": "0.0.10",
     "codecov.io": "0.1.6",
@@ -32,6 +45,8 @@
     "ghooks": "2.0.0",
     "istanbul": "0.4.5",
     "mocha": "3.2.0",
+    "nyc": "10.1.2",
+    "rimraf": "2.6.1",
     "semantic-release": "^6.3.2"
   },
   "czConfig": {
@@ -39,7 +54,13 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test-single && npm run check-coverage"
+      "pre-commit": "npm run cover && npm run check-coverage"
     }
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   }
 }

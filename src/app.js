@@ -1,5 +1,5 @@
-const uniqueRandomArray = require('unique-random-array')
-const ldsQuotes = require('./lds-quotes.json')
+import uniqueRandomArray from 'unique-random-array'
+import ldsQuotes from './lds-quotes.json'
 const getRandomQuote = uniqueRandomArray(ldsQuotes);
 
 function random(number) {

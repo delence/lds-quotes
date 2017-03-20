@@ -1,5 +1,5 @@
-const expect = require('chai').expect
-const quotes = require('./app')
+import {expect} from 'chai'
+import quotes from './app'
 
 describe('Lds-quotes', function() {
     // it('should work!', function() {
